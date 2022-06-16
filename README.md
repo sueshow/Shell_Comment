@@ -29,11 +29,11 @@
 * 函數
   * if...else...
     > if[ ...... && ...... ]; then <br>
-    >   echo "" <br>
+    >   echo "XXX" <br>
     > elif[ ...... && ...... ]; then <br>
-    >   echo "" <br>
+    >   echo "XXX" <br>
     > else <br>
-    >   echo "" <br>
+    >   echo "XXX" <br>
     >   exit 0 
     > fi <br>
   * 確認檔案是否存在
