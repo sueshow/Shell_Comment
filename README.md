@@ -26,11 +26,15 @@
 * 宣告：路徑變數、環境變數
   > declare -x path="/proc_data/MAC" <br>
   > echo ${path} 
+* 常用指令
+  * exit：離開程式，如果在 exit 之後有加上數字，表示傳回值，如：exit 0。在 UNIX 系統下，當程式正常結束，會傳回一個值 0，如果不正常結束則會傳回一個非 0 的數字
+  * return [n]：離開所在函式，如果在其後有加數字的話，則傳回該數字。和 exit 一樣，這個指令可以傳回該函式的執行結果，0 表示正常結束
+  * pwd：顯示目前所在目錄
 * 函數
   * if...else...
     > if[ condition && condition ]; then <br>
     >   echo "XXX" <br>
-    > elif[ condition && condition ]; then <br>
+    > elif[ condition || condition ]; then <br>
     >   echo "XXX" <br>
     > else <br>
     >   echo "XXX" <br>
@@ -38,9 +42,33 @@
     > fi 
   * while：迴圈中 commands 會一直被重複執行，直到 condition 的值為偽為止
     > while condition
-    > do
-    > commands
-    > done
+    >    do
+    >    commands
+    >    done
+  * for
+    >  for name in word1 word2 …
+    >     do do-list
+    >     done
+  * case
+    > case word in
+    >     pattern1) list1 ;;
+    >     pattern2) list2 ;;
+    >     …
+    > esac
+  * 函式的運用
+    > name ( )
+    > {
+    >    statement
+    > }
+
+    > ERRLOG=$1
+    > errexit ( )
+    > {
+    >    echo $1
+    >    date >> $ERRLOG
+    >    echo $1 >> $ERRLOG
+    >    exit
+    > }
   * 數學函數：test n1 -op n2 or [n1 -op n2]
     > -eq，=：等於 <br>
     > -ne，!=：不等於 <br>
@@ -72,16 +100,22 @@
       > echo $c <br>
       > 結果：50 
   * 檔名：test -options file_name or [-option file_name]
-    > -r：file exists and readable <br>
-    > -w：file exists and writeable <br>
-    > -x：file exists and executable <br>
+    > -r：file 可以讀(readable) <br>
+    > -w：file 可以寫(writeable) <br>
+    > -x：file 可以執行(executable) <br>
    
-    > -f：file exists and is a regular file <br>
+    > -f：file 是一般的檔案 <br>
       > ex：-f /proc_data/MAC_20220601.xls <br>
 
-    > -d：file exists and is a directory <br>
+    > -d：file 為目錄 <br>
     > -u：file exists and is setuid <br>
-    > -s：file exists and is greater than zero in size 
+    > -s：file 的檔案長度大於 0 <br>
+    > -L：file 是連結檔 <br>
+    > -b：file 是區塊特別檔 <br>
+    > -c：file 是字元特別檔 <br>
+    > -u：file 的 SUID 己設定 <br>
+    > -g：file 的 SGID 己設定 <br>
+    > -k：file 的 sticky bit 己設定
   * 字串：test -option string or [-option string] 
     > -z：string length is zero <br>
     > -n：string length is non-zero <br>
@@ -112,8 +146,8 @@
         <td> 這個參數包含了傳遞給 shell 旗標 (flag) </td>
     </tr>
     <tr>
-        <td> $1 </td>
-        <td> 代表第一個參數，$2 則為第二個參數，依此類推。而 $0 為這個 shell script 的檔名 </td>
+        <td> $n </td>
+        <td> $1 為第一個參數，$2 為第二個參數，依此類推。而 $0 為這個 shell script 的檔名 </td>
     </tr>
     <tr>
         <td> $# </td>
@@ -132,4 +166,5 @@
 
 ## 參考資訊
 * [Shell 和 Shell Script](https://www.cyut.edu.tw/~ywfan/1109linux/201109chapter11shell%20script.htm)
+* [Shell Script](https://www.twbsd.org/cht/book/ch24.htm)
 <br>
