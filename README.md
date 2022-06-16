@@ -50,6 +50,7 @@
     > -x：file exists and executable <br>
     > -f：file exists and is a regular file <br>
       > ex：-f /proc_data/MAC_20220601.xls <br>
+
     > -d：file exists and is a directory <br>
     > -u：file exists and is setuid <br>
     > -s：file exists and is greater than zero in size <br>
