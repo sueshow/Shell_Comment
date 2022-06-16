@@ -7,13 +7,22 @@
 <br>
 
 ## Shell Script
-* 設定變數方式：變數會在同一個 process 中持續存在，直到此 process 結束
+* 設定變數：變數會在同一個 process 中持續存在，直到此 process 結束
   > var = value
-* 取用變數的方法
+* 取用變數
   > $var
-* 呼叫
+* 呼叫：
+  * 變數的值可含有 space 的字串，帶有一個以上 space 的變數，給定值的時候，必須以成對的雙引號(")或單引號(')涵蓋
+  * 雙引號(")中若含有變數(如$var)，會先將變數轉換成其實際的值，單引號(')則會將變數當成是一個值，而不會作轉換動作
   > arthur = "我的小名" <br>
   > echo $arthur
+  <br>
+  > echo "This is a Borne Shell Script"
+  <br>
+  > echo "arthur就是 $arthur"<br>
+  > 結果：arthur 就是 我的小名<br>
+  > echo 'arthur就是 $arthur' <br>
+  > 結果：arthur 就是 $arthur
 * 
 <br>
 
