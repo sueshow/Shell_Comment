@@ -12,7 +12,7 @@
 * 取用變數的方法
   > $var
 * 呼叫
-  > arthur = "我的小名"
+  > arthur = "我的小名" <br>
   > echo $arthur
 * 
 <br>
