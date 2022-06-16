@@ -59,9 +59,18 @@
       > 結果：3 <br>
       > count=`expr 5 \* 3` <br>
       > echo $count <br>
-      > 結果：15
+      > 結果：15 <br>
       > echo `expr $count % 3` <br>
-      > 結果：0
+      > 結果：0 
+    * 可以使用 $(()) 將運算式放在括號中，即可達到運算的功能
+      > a=10 <br>
+      > b=5 <br>
+      > c=$((${a}+${b})) <br>
+      > echo $c <br>
+      > 結果：15 <br>
+      > c=$((${a}*${b})) <br>
+      > echo $c <br>
+      > 結果：50 
   * 檔名：test -options file_name or [-option file_name]
     > -r：file exists and readable <br>
     > -w：file exists and writeable <br>
