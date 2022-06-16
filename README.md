@@ -28,9 +28,9 @@
   > echo ${path} 
 * 函數
   * if...else...
-    > if[ && ]; then <br>
+    > if[ ...... && ...... ]; then <br>
     >   echo "" <br>
-    > elif[ && ]; then <br>
+    > elif[ ...... && ...... ]; then <br>
     >   echo "" <br>
     > else <br>
     >   echo "" <br>
