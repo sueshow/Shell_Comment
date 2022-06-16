@@ -36,14 +36,28 @@
     >   echo "XXX" <br>
     >   exit 0 <br>
     > fi <br>
-  * 確認檔案是否存在
-    > -f /proc_data/MAC_20220601.xls <br>
-  * 數學函數
+
+  * 數學函數：test n1 -op n2 or [n1 -op n2]
     > -eq：等於 <br>
+    > -ne：不等於 <br>
     > -lt：小於 <br>
     > -le：小於或等於 <br>
     > -gt：大於 <br>
     > -ge：大於或等於
+  * 檔名：test -options file_name or [-option file_name]
+    > -r：file exists and readable <br>
+    > -w：file exists and writeable <br>
+    > -x：file exists and executable <br>
+    > -f：file exists and is a regular file <br>
+      > -f /proc_data/MAC_20220601.xls <br>
+    > -d：file exists and is a directory <br>
+    > -u：file exists and is setuid <br>
+    > -s：file exists and is greater than zero in size <br>
+  * 字串：test -option string or [-option string] 
+    > -z：string length is zero <br>
+    > -n：string length is non-zero <br>
+    > string1 = string2：string1 is identical to string2 <br>
+    > string1 != string2：string1 is not identical to string2 
 <br>
 
 ## 參考資訊
