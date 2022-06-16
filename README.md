@@ -48,6 +48,7 @@
     > -r：file exists and readable <br>
     > -w：file exists and writeable <br>
     > -x：file exists and executable <br>
+   
     > -f：file exists and is a regular file <br>
       > ex：-f /proc_data/MAC_20220601.xls <br>
 
