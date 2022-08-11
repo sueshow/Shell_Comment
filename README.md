@@ -58,33 +58,34 @@
     >   exit 0 <br>
     > fi 
   * while：迴圈中 commands 會一直被重複執行，直到 condition 的值為偽為止
-    > while condition
-    >    do
-    >    commands
-    >    done
+    > while condition  <br>
+    >    do  <br>
+    >    commands  <br>
+    >    done  <br>
   * for
-    >  for name in word1 word2 …
-    >     do do-list
+    >  for name in word1 word2 … <br>
+    >     do <br> 
+    >     do-list  <br>
     >     done
   * case
-    > case word in
-    >     pattern1) list1 ;;
-    >     pattern2) list2 ;;
-    >     …
-    > esac
+    > case word in  <br>
+    >     pattern1) list1 ;;  <br>
+    >     pattern2) list2 ;;  <br>
+    >     …  <br>
+    > esac 
   * 函式的運用
-    > name ( )
-    > {
-    >    statement
-    > }
+    > name ( )  <br>
+    > {  <br>
+    >    statement  <br>
+    > }  <br>
 
-    > ERRLOG=$1
-    > errexit ( )
-    > {
-    >    echo $1
-    >    date >> $ERRLOG
-    >    echo $1 >> $ERRLOG
-    >    exit
+    > ERRLOG=$1  <br>
+    > errexit ( )  <br>
+    > {  <br>
+    >    echo $1  <br>
+    >    date >> $ERRLOG  <br>
+    >    echo $1 >> $ERRLOG  <br>
+    >    exit  <br>
     > }
   * 數學函數：test n1 -op n2 or [n1 -op n2]
     > -eq，=：等於 <br>
