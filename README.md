@@ -33,8 +33,16 @@
   
   > 設定日期變數 <br>
   > declare -i txdt="20220801" 
-* 刪除：目錄
-  > rm -r "/proc_data/MAC"
+* 目錄
+  * 指定路徑
+    > cd "/proc_data/MAC"
+  * 建立目錄
+    > mkdir "XXXXX"
+  * 刪除目錄
+    > rm -r "/proc_data/MAC"
+  * 設定權限
+    > 可讀可寫可執行
+    > chmod 777 "/proc_data/MAC"   
 * 常用指令
   * exit：離開程式，如果在 exit 之後有加上數字，表示傳回值，如：exit 0。在 UNIX 系統下，當程式正常結束，會傳回一個值 0，如果不正常結束則會傳回一個非 0 的數字
   * return [n]：離開所在函式，如果在其後有加數字的話，則傳回該數字。和 exit 一樣，這個指令可以傳回該函式的執行結果，0 表示正常結束
@@ -176,4 +184,5 @@
 ## 參考資訊
 * [Shell 和 Shell Script](https://www.cyut.edu.tw/~ywfan/1109linux/201109chapter11shell%20script.htm)
 * [Shell Script](https://www.twbsd.org/cht/book/ch24.htm)
+* [基本指令](https://ithelp.ithome.com.tw/articles/10218257)
 <br>
