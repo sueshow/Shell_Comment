@@ -14,18 +14,18 @@
 * 呼叫：可輸出指定資訊
   * 變數的值可含有 space 的字串，帶有一個以上 space 的變數，給定值的時候，必須以成對的雙引號(")或單引號(')涵蓋
   * 雙引號(")中若含有變數(如$var)，會先將變數轉換成其實際的值，單引號(')則會將變數當成是一個值，而不會作轉換動作
-  > arthur = "我的小名" <br>
-  > echo $arthur <br>
+    > arthur = "我的小名" <br>
+    > echo $arthur <br>
 
-  > echo "This is a Borne Shell Script" <br>
-
-  > echo "arthur就是 $arthur" <br>
-  > 結果：arthur 就是 我的小名 <br>
-  > echo 'arthur就是 $arthur' <br>
-  > 結果：arthur 就是 $arthur <br>
+    > echo "This is a Borne Shell Script" <br>
+ 
+    > echo "arthur就是 $arthur" <br>
+    > 結果：arthur 就是 我的小名 <br>
+    > echo 'arthur就是 $arthur' <br>
+    > 結果：arthur 就是 $arthur <br>
   
-  > 會將「arthur 就是 我的小名」放入檔案：XXXXXX.txt <br>
-  > echo "arthur就是 $arthur" >> XXXXXX.txt 
+    > 會將「arthur 就是 我的小名」放入檔案：XXXXXX.txt <br>
+    > echo "arthur就是 $arthur" >> XXXXXX.txt 
 * 宣告：路徑變數、環境變數
   > 設定名稱變數 <br>
   > declare -x path="/proc_data/MAC" <br>
