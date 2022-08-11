@@ -22,14 +22,17 @@
   > echo "arthur就是 $arthur" <br>
   > 結果：arthur 就是 我的小名 <br>
   > echo 'arthur就是 $arthur' <br>
-  > 結果：arthur 就是 $arthur
-* 宣告：路徑變數、環境變數
-  > 設定名稱變數
-  > declare -x path="/proc_data/MAC" <br>
-  > echo ${path}
+  > 結果：arthur 就是 $arthur <br>
   
-  > 設定日期變數
-  > declare -i txdt="20220801"
+  > 會將「arthur 就是 我的小名」放入檔案：XXXXXX.txt <br>
+  > echo "arthur就是 $arthur" >> XXXXXX.txt 
+* 宣告：路徑變數、環境變數
+  > 設定名稱變數 <br>
+  > declare -x path="/proc_data/MAC" <br>
+  > echo ${path} <br>
+  
+  > 設定日期變數 <br>
+  > declare -i txdt="20220801" 
 * 常用指令
   * exit：離開程式，如果在 exit 之後有加上數字，表示傳回值，如：exit 0。在 UNIX 系統下，當程式正常結束，會傳回一個值 0，如果不正常結束則會傳回一個非 0 的數字
   * return [n]：離開所在函式，如果在其後有加數字的話，則傳回該數字。和 exit 一樣，這個指令可以傳回該函式的執行結果，0 表示正常結束
