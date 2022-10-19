@@ -38,8 +38,9 @@
     > 會將「arthur 就是 我的小名」放入檔案：XXXXXX.txt <br>
     > echo "arthur就是 $arthur" >> XXXXXX.txt <br>
     
-    * In Software
-      > echo "@@JCS_STEP_VAR step_var_h $setp_var_h"
+    * In Software：將參數往後面的程序帶
+      > echo "@@JCS_STEP_VAR var_h $\var_h"
+      > echo "@@JCS_GLOBAL_VAR %varname %varvalue"
 * 宣告：路徑變數、環境變數
   > 設定名稱變數 <br>
   > declare -x path="/proc_data/MAC" <br>
