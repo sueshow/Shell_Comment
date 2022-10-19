@@ -6,6 +6,7 @@
 * Linux 的 kernel 只有一個，但 kernel 之外的 shell 卻有許多種，例如 bourne Shell、C Shell、Korn Shell、Zsh Shell等等，但最常接觸到有 BASH (Bourne Again SHell)，為 GNU 所加強的一個 Bourne shell 版本，也是大多數 Linux 套件的預設 shell
 <br>
 
+
 ## Shell Script
 * 要點
   * 在 [ ] 當中，只能有一個判別式
@@ -14,6 +15,7 @@
   * 定義變數，指定變數的等號(=)前後不空格
 * 設定變數：變數會在同一個 process 中持續存在，直到此 process 結束
   > var = value <br>
+  
   > var_h=`date +%H` <br>
   > 結果：取執行時間的小時 <br>
   > var_m=`date +%M` <br>
@@ -59,6 +61,24 @@
   * exit：離開程式，如果在 exit 之後有加上數字，表示傳回值，如：exit 0。在 UNIX 系統下，當程式正常結束，會傳回一個值 0，如果不正常結束則會傳回一個非 0 的數字
   * return [n]：離開所在函式，如果在其後有加數字的話，則傳回該數字。和 exit 一樣，這個指令可以傳回該函式的執行結果，0 表示正常結束
   * pwd：顯示目前所在目錄
+* Touch 
+  * 可用來更改檔案或目錄的時間戳記，除此之外，該指令也可以用來建立空檔案
+  * 三種時間戳記
+    * access time：檔案最後被讀取的時間
+    * modify time：檔案最後被修改的時間
+    * change time：檔案屬性(如權限、擁有者等)最後被修改的時間
+    * 可使用 stat 指令來查看一個檔案的這三種時間戳記
+      > stat test.sh <br>
+      > touch test.sh  # 更改時間戳記 <br>
+      > touch -a test.sh  # 更新 access time <br>
+      > touch -m test.sh  # 更新 modify time 
+    * 複製時間戳記
+      > touch -r source target   # 可將 source 這個檔案的 access time 與 modify time 都複製到 target 這個檔案上
+    * 指定時間戳記：詳如參考網址
+    * 建立空檔案：自動建立一個空檔案，並將檔案的時間設定為目前的時間
+      > touch empty.txt <br>
+      > touch empty{1..10}.txt # 建立 10 個空檔案 <br>
+      > touch -c file.txt    # 不要自動建立空檔案
 * 函數
   * if...else...
     > if[ condition && condition ]; then <br>
@@ -153,6 +173,7 @@
     > string1 != string2：string1 is not identical to string2 
 <br>
 
+
 ## 程式會自動定義的變數
 <table border="1" width="30%">
     <tr>
@@ -194,8 +215,10 @@
 </table> 
 <br>
 
+
 ## 參考資訊
 * [Shell 和 Shell Script](https://www.cyut.edu.tw/~ywfan/1109linux/201109chapter11shell%20script.htm)
 * [Shell Script](https://www.twbsd.org/cht/book/ch24.htm)
 * [基本指令](https://ithelp.ithome.com.tw/articles/10218257)
+* [Linux 的 touch 指令用法教學與範例](https://blog.gtwang.org/linux/linux-touch-command-tutorial-examples/)
 <br>
