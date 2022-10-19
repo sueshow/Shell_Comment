@@ -7,8 +7,16 @@
 <br>
 
 ## Shell Script
+* 要點
+  * 在 [ ] 當中，只能有一個判別式
+  * 在 [ ] 與 [ ] 當中，可以使用 && 或 || 來組織判別式
+  * 每一個獨立的元件之間『都需要有空白鍵來隔開』
 * 設定變數：變數會在同一個 process 中持續存在，直到此 process 結束
-  > var = value
+  > var = value <br>
+  > var_h=`date +%H` <br>
+  > 結果：取執行時間的小時 <br>
+  > var_m=`date +%M` <br>
+  > 結果：取執行時間的分鐘
 * 取用變數
   > $var
 * 呼叫：可輸出指定資訊
@@ -25,7 +33,10 @@
     > 結果：arthur 就是 $arthur <br>
   
     > 會將「arthur 就是 我的小名」放入檔案：XXXXXX.txt <br>
-    > echo "arthur就是 $arthur" >> XXXXXX.txt 
+    > echo "arthur就是 $arthur" >> XXXXXX.txt <br>
+    
+    * In Software
+      > echo "@@JCS_STEP_VAR step_var_h $setp_var_h"
 * 宣告：路徑變數、環境變數
   > 設定名稱變數 <br>
   > declare -x path="/proc_data/MAC" <br>
@@ -88,7 +99,7 @@
     >    exit  <br>
     > }
   * 數學函數：test n1 -op n2 or [n1 -op n2]
-    > -eq，=：等於 <br>
+    > -eq，==：等於 <br>
     > -ne，!=：不等於 <br>
     > -lt，\<：小於 <br>
     > -le，\<=：小於或等於 <br>
