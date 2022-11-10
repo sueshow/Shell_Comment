@@ -58,6 +58,48 @@
   * 設定權限
     > 可讀可寫可執行
     > chmod 777 "/proc_data/MAC"   
+* 解壓縮/壓縮檔案
+  * 壓縮
+    * 說明：7-Zip 預設會壓縮該目錄與所有子目錄的所有檔案
+    * 壓縮 dir1\ 資料夾下所有檔案，且壓縮檔案中會看到 dir1 這個資料夾
+      > 7z a "dir1.zip" "dir1\" 
+    * 壓縮 dir1\ 資料夾下所有檔案，壓縮檔案不會看到 dir1 這個資料夾，只會看到裡面的檔案與子資料夾
+      > 7z a "dir1.zip" "dir1\*"
+    * 壓縮整個資料夾，並且保留現有檔案的完整路徑
+      > CD /D G:\ <br>
+      > 7z a "dir2.zip" "sub1\dir1\dir2"
+    * 壓縮限定特定類型的檔案，可先加上 -r 參數，再加不同的檔名樣式 (File Patterns) 就可找出檔案並加入壓縮檔
+      > 7z a "dir1.zip" "dir1\" -r "dir1\*.aspx" <br>
+      > 7z a "dir1.zip" "dir1\" -r "dir1\*.aspx" "dir1\*.dll"
+    * 排除特定類型的檔案不要進壓縮檔
+      > 7z a "dir1.zip" "dir1\" "-xr!*.pdb" "-xr!web.config"
+    * 將目前資料夾下的所有檔案壓縮到上一層目錄：不加上任何參數，預設就是把當前目錄全部都壓縮起來，但請記得壓縮檔不要放在當前目錄下
+      > 7z a "..\dir1.zip"
+  * 解壓縮
+    * 解壓縮到當前目錄：解出來的東西會跟壓縮檔放在一起
+      > 7z x "dir1.zip"
+    * 解壓縮到指定輸出目錄：在 -o 與 Path 中間不能有任何空白字元
+      > 7z x "dir1.zip" -o"dir1" <br>
+      > 7z x "dir1.zip" -o"C:\Program Files\"
+    * 只解壓縮特定檔案類型到指定輸出目錄
+      > 7z x "dir1.zip" -o"dir1" -r "*.dll"
+    * 擷取特定檔案類型到指定輸出目錄
+      * 取出所有 *.js 檔案到指定輸出目錄
+        > 7z e "dir1.zip" -o"dir1" -r "*.js"
+      * 若出現檔名衝突問你要不要覆蓋的提示。如果不想提示直接覆蓋，可以加上 -y 參數
+        > 7z e "dir1.zip" -o"dir1" -r "*.dll" -y
+  * 其他進階用法
+    * 解壓縮/壓縮檔案時包含解壓縮密碼
+      * 設定一個密碼(-p)
+        > 7z a "dir1.zip" "dir1/" -p"1q2w3e4r"
+      * 設定一個密碼(-p)，並且將壓縮檔的 Header 資訊一併加密，也就是連檔名都一起加密，開啟壓縮檔的時候就要先輸入密碼才知道內容
+        > 7z a "dir1.7z" "dir1/" -p"1q2w3e4r"  -mhe
+      * 解壓縮一個加密過的壓縮檔到指定輸出目錄
+        > 7z x "dir1.7z" -o"dir1/" -p"1q2w3e4r"
+    * 列出所有檔案清單
+      > 7z l "dir1.zip"
+    * 顯示壓縮檔中完整的技術資訊
+      > 7z l "dir1.zip" -slt
 * 常用指令
   * exit：離開程式，如果在 exit 之後有加上數字，表示傳回值，如：exit 0。在 UNIX 系統下，當程式正常結束，會傳回一個值 0，如果不正常結束則會傳回一個非 0 的數字
   * return [n]：離開所在函式，如果在其後有加數字的話，則傳回該數字。和 exit 一樣，這個指令可以傳回該函式的執行結果，0 表示正常結束
@@ -222,4 +264,5 @@
 * [Shell Script](https://www.twbsd.org/cht/book/ch24.htm)
 * [基本指令](https://ithelp.ithome.com.tw/articles/10218257)
 * [Linux 的 touch 指令用法教學與範例](https://blog.gtwang.org/linux/linux-touch-command-tutorial-examples/)
+* [分享幾個常用的 7-Zip 壓縮與解壓縮命令](https://blog.miniasp.com/post/2021/07/07/Useful-7-Zip-7z-CLI-Command-Options)
 <br>
