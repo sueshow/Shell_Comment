@@ -100,6 +100,116 @@
       > 7z l "dir1.zip"
     * 顯示壓縮檔中完整的技術資訊
       > 7z l "dir1.zip" -slt
+* 彙整
+  <table border="1" width="30%">
+    <tr>
+        <th width="2%">命令</a>
+        <th width="2%">代表意義</a>
+        <th width="6%">命令說明</a>
+        <th width="10%">指令</a>
+    </tr>
+    <tr>
+        <td> a </td>
+        <td> Add </td>
+        <td> 將檔名列中的檔案加入壓縮檔 </td>
+        <td> -i (Include)         <br>
+             -m (Method)          <br>
+             -p (Set Password)    <br>
+             -r (Recurse)         <br>
+             -sfx (create SFX)    <br>
+             -si (use StdIn)      <br>
+             -so (use StdOut)     <br>
+             -t (Type of archive) <br>
+             -u (Update)          <br>
+             -v (Volumes)         <br>
+             -w (Working Dir)     <br>
+             -x (Exclude)         </td>
+    </tr>
+    <tr>
+        <td> d </td>
+        <td> Delete </td>
+        <td> 將指定檔名由壓縮檔內移除 </td>
+        <td> -i (Include)         <br>
+             -m (Method)          <br>
+             -p (Set Password)    <br>
+             -r (Recurse)         <br>
+             -u (Update)          <br>
+             -w (Working Dir)     <br>
+             -x (Exclude)         </td>
+    </tr>
+    <tr>
+        <td> e </td>
+        <td> Extract </td>
+        <td> 將指定檔名由壓縮檔中擷取出來 </td>
+        <td> -ai (Include archives)                 <br>
+             -an (Disable parsing of archive_name)  <br>
+             -ao (Overwrite mode)                   <br>
+             -ai (Exclude archives)                 <br>
+             -i (Include)                           <br>
+             -o (Set Output Directory)              <br>
+             -p (Set Password)                      <br>
+             -r (Recurse)                           <br>
+             -so (use StdOut)                       <br>
+             -x (Exclude)                           <br>
+             -y (Assume Yes on all queries)         </td>
+    </tr>
+    <tr>
+        <td> l </td>
+        <td> List </td>
+        <td> 顯示壓縮檔案內的檔案資訊 </td>
+        <td> -ai (Include archives)                 <br>
+             -an (Disable parsing of archive_name)  <br>
+             -ai (Exclude archives)                 <br>
+             -i (Include)                           <br>
+             -p (Set Password)                      <br>
+             -r (Recurse)                           <br>
+             -x (Exclude)                           </td>
+    </tr>
+    <tr>
+        <td> t </td>
+        <td> Test </td>
+        <td> 測試壓縮檔的完整性 </td>
+        <td> -ai (Include archives)                 <br>
+             -an (Disable parsing of archive_name)  <br>
+             -ai (Exclude archives)                 <br>
+             -i (Include)                           <br>
+             -p (Set Password)                      <br>
+             -r (Recurse)                           <br>
+             -x (Exclude)                           </td>
+    </tr>
+    <tr>
+        <td> u </td>
+        <td> Update </td>
+        <td> 用較新的同名檔案更新壓縮檔內較舊的檔案 </td>
+        <td> -i (Include)         <br>
+             -m (Method)          <br>
+             -p (Set Password)    <br>
+             -r (Recurse)         <br>
+             -sfx (create SFX)    <br>
+             -si (use StdIn)      <br>
+             -so (use StdOut)     <br>
+             -t (Type of archive) <br>
+             -u (Update)          <br>
+             -w (Working Dir)     <br>
+             -x (Exclude)         </td>
+    </tr>
+    <tr>
+        <td> x </td>
+        <td> eXtract with full paths </td>
+        <td> 以完整路徑的格式解出檔案 </td>
+        <td> -ai (Include archives)                 <br>
+             -an (Disable parsing of archive_name)  <br>
+             -ao (Overwrite mode)                   <br>
+             -ai (Exclude archives)                 <br>
+             -i (Include)                           <br>
+             -o (Set Output Directory)              <br>
+             -p (Set Password)                      <br>
+             -r (Recurse)                           <br>
+             -so (use StdOut)                       <br>
+             -x (Exclude)                           <br>
+             -y (Assume Yes on all queries)         </td>
+    </tr>
+  </table>
 * 常用指令
   * exit：離開程式，如果在 exit 之後有加上數字，表示傳回值，如：exit 0。在 UNIX 系統下，當程式正常結束，會傳回一個值 0，如果不正常結束則會傳回一個非 0 的數字
   * return [n]：離開所在函式，如果在其後有加數字的話，則傳回該數字。和 exit 一樣，這個指令可以傳回該函式的執行結果，0 表示正常結束
@@ -265,4 +375,5 @@
 * [基本指令](https://ithelp.ithome.com.tw/articles/10218257)
 * [Linux 的 touch 指令用法教學與範例](https://blog.gtwang.org/linux/linux-touch-command-tutorial-examples/)
 * [分享幾個常用的 7-Zip 壓縮與解壓縮命令](https://blog.miniasp.com/post/2021/07/07/Useful-7-Zip-7z-CLI-Command-Options)
+* [7-Zip的命令列指令](https://felixx.pixnet.net/blog/post/36966417)
 <br>
